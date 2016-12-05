@@ -126,7 +126,7 @@ public class GuiPrivateWindow extends PrivateWindow {
 				}
 			 });
 			 
-			 JButton bu = new JButton("SetDisplay");
+			 JButton bu = new JButton("NotInUse");
 			 
 			 save.setLineWrap(true);
 			 save.setEditable(true);
@@ -192,6 +192,7 @@ public class GuiPrivateWindow extends PrivateWindow {
 						 
 						 if( sendd.getText().trim().equals("")){
 							 JOptionPane.showMessageDialog(Mainprivateframe.this, "Input Field Is Empty!");
+							 sendd.setText("");
 						 }else{
 							 save.append("Me:"+"\t\n "+sendd.getText().trim()+"\n");
 							 save.setSelectionStart(save.getText().length());
@@ -234,10 +235,11 @@ public class GuiPrivateWindow extends PrivateWindow {
 				 public void actionPerformed(ActionEvent e){
 					 if( sendd.getText().trim().equals("")){
 						 JOptionPane.showMessageDialog(Mainprivateframe.this, "Input Field Is Empty!");
+						 sendd.setText("");
 					 }else{ 
 						 writeOutcomingText(sendd.getText());
 						 save.append("Me:"+"\t\n "+sendd.getText().trim()+"\n"); sendd.setText("");
-						 
+						 sendd.setText("");
 						 } 
 				 }
 			 });

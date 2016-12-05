@@ -85,7 +85,7 @@ public class GuiGroupWindow extends GroupWindow {
 			 JPanel left =new JPanel();
 			 left.setBorder(new TitledBorder("Friend")); 
 			 
-			 zjpp1.setBorder(new TitledBorder("User List (double click to open private chatting)")); 
+			 zjpp1.setBorder(new TitledBorder("User List(double click to open private chatting)")); 
 			 zjpp2.setBorder(new TitledBorder("Chat Messages")); 
 			 zjpp3.setBorder(new TitledBorder("User-defined")); 
 			 
@@ -170,6 +170,7 @@ public class GuiGroupWindow extends GroupWindow {
 						 
 						 if( sendd.getText().trim().equals("")){
 							 JOptionPane.showMessageDialog(Mainframe.this, "Input Field Is Empty!");
+							 sendd.setText("");
 						 }else{
 							 save.append("Me(" + requestmaker.getdisplayname() +"):\t\n "+sendd.getText().trim()+"\n");
 							 save.setSelectionStart(save.getText().length());
@@ -226,10 +227,11 @@ public class GuiGroupWindow extends GroupWindow {
 				 public void actionPerformed(ActionEvent e){
 					 if( sendd.getText().trim().equals("")){
 						 JOptionPane.showMessageDialog(Mainframe.this, "Input Field Is Empty!");
+						 sendd.setText("");
 					 }else{ 
 						 writeOutcomingText(sendd.getText());
 						 save.append("Me(" + requestmaker.getdisplayname() +"):\t\n "+sendd.getText().trim()+"\n");
-						 getgroupmember();
+						 sendd.setText("");
 						 } 
 				 }
 			 });
